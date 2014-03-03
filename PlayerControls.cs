@@ -4,22 +4,20 @@ using System.Collections;
 public class PlayerControls : MonoBehaviour {
 	public KeyCode moveUp;
 	public KeyCode moveDown;
-	public float speed = 10F;
+	public float speed = 10f;
 
 	private void SetVelocity(float speed) {
-		//Vector2 new_velocity = new Vector2(this.rigidbody2D.velocity.x, speed);
 		this.rigidbody2D.velocity = new Vector2(this.rigidbody2D.velocity.x, speed);
 	}
 	
 	void Update () {
+		float speed = 0f;
 		if (Input.GetKey (this.moveUp)) {
-			this.SetVelocity(this.speed);
+			speed = this.speed;
 		}
 		else if (Input.GetKey (this.moveDown)) {
-			this.SetVelocity(-this.speed);
+			speed= -this.speed;
 		}
-		else {
-			this.SetVelocity(0F);
-		}
+		this.SetVelocity(speed);
 	}
 }
