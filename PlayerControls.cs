@@ -16,7 +16,7 @@ public class PlayerControls : MonoBehaviour {
 			speed = this.speed;
 		}
 		else if (Input.GetKey (this.moveDown)) {
-			speed= -this.speed;
+			speed = -this.speed;
 		}
 		this.SetVelocity(speed);
 	}
